@@ -82,8 +82,8 @@ namespace RE
 		public TESCameraState  // 000
 	{
 	public:
-		static constexpr auto RTTI{ RTTI::TESCamera };
-		static constexpr auto VTABLE{ VTABLE::TESCamera };
+		static constexpr auto RTTI{ RTTI::ThirdPersonState };
+		static constexpr auto VTABLE{ VTABLE::ThirdPersonState };
 		static constexpr auto STATE{ CameraStates::k3rdPerson };
 
 		// add
@@ -92,6 +92,13 @@ namespace RE
 		virtual void SetFreeRotationMode(bool a_cameraEnable, bool a_modifyRotation);  // 13
 		virtual void UpdateRotation();                                                 // 14
 		virtual void HandleLookInput(const NiPoint2& a_input);                         // 15
+
+		void HandleCameraCollision(NiAVObject* param)
+		{
+			using func_t = decltype(&ThirdPersonState::HandleCameraCollision);
+			REL::Relocation<func_t> func{ REL::Offset(0x1253A80) };
+			return func(this, param);
+		}
 
 		// members
 		NiQuaternion rotation;               // 028
@@ -231,6 +238,27 @@ namespace RE
 			using func_t = decltype(&PlayerCamera::StopPipboyMode);
 			REL::Relocation<func_t> func{ REL::ID(811954) };
 			return func(this);
+		}
+
+		void Force3rdPerson()
+		{
+			using func_t = decltype(&PlayerCamera::Force3rdPerson);
+			REL::Relocation<func_t> func{ REL::ID(162201) };
+			return func(this);
+		}
+
+		void Force1stPerson()
+		{
+			using func_t = decltype(&PlayerCamera::Force1stPerson);
+			REL::Relocation<func_t> func{ REL::ID(110083) };
+			return func(this);
+		}
+
+		NiQuaternion* ApplyCameraShake(NiQuaternion* a_out, NiQuaternion* a_in)
+		{
+			using func_t = decltype(&PlayerCamera::ApplyCameraShake);
+			REL::Relocation<func_t> func{ REL::Offset(0x124C100) };
+			return func(this, a_out, a_in);
 		}
 
 		// members

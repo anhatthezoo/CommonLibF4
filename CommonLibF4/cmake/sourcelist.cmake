@@ -46,6 +46,7 @@ set(SOURCES
 	include/RE/Bethesda/BSInputEventReceiver.h
 	include/RE/Bethesda/BSInputEventSingleUser.h
 	include/RE/Bethesda/BSInputEventUser.h
+	include/RE/Bethesda/BSInputEnableManager.h
 	include/RE/Bethesda/BSLock.h
 	include/RE/Bethesda/BSMTAManager.h
 	include/RE/Bethesda/BSMemStorage.h
@@ -336,6 +337,9 @@ set(SOURCES
 	include/RE/msvc/memory.h
 	include/RE/msvc/typeinfo.h
 	include/REL/Relocation.h
+	include/REX/BASE.h
+	include/REX/REX.h
+	include/REX/TEnumSet.h
 	src/F4SE/API.cpp
 	src/F4SE/Impl/PCH.cpp
 	src/F4SE/Impl/WinAPI.cpp

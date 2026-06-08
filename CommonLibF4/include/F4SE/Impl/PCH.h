@@ -45,6 +45,8 @@ static_assert(
 #include <spdlog/spdlog.h>
 #pragma warning(pop)
 
+#include "REX/REX.h"
+
 #include "F4SE/Impl/WinAPI.h"
 
 namespace F4SE

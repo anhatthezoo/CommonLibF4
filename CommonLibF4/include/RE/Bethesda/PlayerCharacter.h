@@ -381,6 +381,20 @@ namespace RE
 			return func(this, a_show, a_skipEffects);
 		}
 
+		void Show1stPerson(bool a_show)
+		{
+			using func_t = decltype(&PlayerCharacter::Show1stPerson);
+			REL::Relocation<func_t> func{ REL::Offset(0xEA0CC0) };
+			return func(this, a_show);
+		}
+
+		void SetAIControlledPackage(bool a_enable)
+		{
+			using func_t = decltype(&PlayerCharacter::SetAIControlledPackage);
+			static REL::Relocation<func_t> func{ REL::Offset(0xEB1DC0) };
+			return func(this, a_enable);
+		}
+
 		// members
 		BSSpinLock actorToDisplayOnHUDLock;                                                     // 628
 		BSSpinLock questTargetLock;                                                             // 630

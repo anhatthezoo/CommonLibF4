@@ -41,6 +41,7 @@
 #include "RE/Bethesda/BSInputEventReceiver.h"
 #include "RE/Bethesda/BSInputEventSingleUser.h"
 #include "RE/Bethesda/BSInputEventUser.h"
+#include "RE/Bethesda/BSInputEnableManager.h"
 #include "RE/Bethesda/BSLock.h"
 #include "RE/Bethesda/BSMTAManager.h"
 #include "RE/Bethesda/BSMemStorage.h"
